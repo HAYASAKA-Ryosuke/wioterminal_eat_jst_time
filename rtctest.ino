@@ -32,5 +32,9 @@ void loop(){
     tft.drawString("EAT: " + String(eat.year()) + "/" + datetimeZeroPad(String(eat.month())) + "/" + datetimeZeroPad(String(eat.day())), 20, 90);
     tft.drawString(datetimeZeroPad(String(eat.hour())) + ":" + datetimeZeroPad(String(eat.minute())) + ":" + datetimeZeroPad(String(eat.second())), 145, 120);
 
+    DateTime utc(now - TimeSpan(0, 9, 0, 0));
+    tft.drawString("UTC: " + String(utc.year()) + "/" + datetimeZeroPad(String(utc.month())) + "/" + datetimeZeroPad(String(utc.day())), 20, 160);
+    tft.drawString(datetimeZeroPad(String(utc.hour())) + ":" + datetimeZeroPad(String(utc.minute())) + ":" + datetimeZeroPad(String(utc.second())), 145, 190);
+
     delay(1000);
 }
